@@ -1,0 +1,49 @@
+{
+  "businessName": "Edu'uess Enterprise",
+  "industry": "Manufacturing",
+  "tone": "professional",
+  "tagline": "Quality Manufacturing Solutions for Nigerian Industries",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Edu'uess Enterprise: Your Trusted Manufacturing Partner in Port Harcourt. Delivering quality industrial solutions with precision and reliability. Serving businesses across Rivers State and beyond.",
+      "imagePrompt": "Modern Nigerian manufacturing facility with industrial equipment and machinery, Port Harcourt industrial landscape, professional workers in safety gear, clean production floor with quality control stations, bright natural lighting, photorealistic, high detail, professional business photography",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Edu'uess Enterprise is a leading manufacturing company based in Port Harcourt, Rivers State. Located at 120 Uniport Road, opposite Lapo Macrofinance Bank in Choba, we are strategically positioned to serve clients across Obio Akpor and the entire South-South region.\n\nWith our commitment to excellence and quality, we provide reliable manufacturing solutions that meet international standards while understanding the unique needs of Nigerian businesses. Our state-of-the-art facility and experienced team ensure every project is executed with precision and professionalism.\n\nWe pride ourselves on building long-term partnerships with our clients, delivering consistent quality, timely production, and exceptional customer service that drives your business forward.",
+      "imagePrompt": "Professional Nigerian manufacturing team in a modern facility, diverse workers collaborating around industrial equipment, Port Harcourt business environment, quality control inspection scenes, clean organized workshop, natural lighting, authentic Nigerian workplace setting, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Edu'uess Enterprise offers comprehensive manufacturing services designed to meet the diverse needs of Nigerian industries:\n\n• Custom Manufacturing: Tailored production solutions to match your specific requirements and specifications\n\n• Industrial Supply: Quality raw materials and industrial components for various sectors\n\n• Quality Assurance: Rigorous testing and inspection protocols ensuring every product meets the highest standards\n\n• Technical Consultation: Expert guidance on manufacturing processes, optimization, and efficiency improvements\n\n• Supply Chain Solutions: Reliable sourcing and logistics support for seamless operations\n\n• Maintenance Services: Ongoing support and maintenance to keep your operations running smoothly\n\nWe work closely with clients across construction, oil and gas, agriculture, and other key Nigerian industries to deliver manufacturing excellence.",
+      "imagePrompt": "Collage of Nigerian manufacturing processes, industrial machinery in operation, quality control testing equipment, warehouse with organized inventory, technical blueprints and planning, diverse industrial products, Port Harcourt industrial zone, professional documentation, photorealistic detail",
+      "layout": "grid"
+    },
+    {
+      "id": "why-choose-us",
+      "name": "Why Choose Edu'uess Enterprise",
+      "copy": "Quality Guarantee: We maintain strict quality control standards on every project, ensuring you receive products that meet or exceed expectations.\n\nLocal Expertise: As a Port Harcourt-based company, we understand the Nigerian market, regulatory environment, and the specific challenges local businesses face.\n\nReliable Delivery: Our efficient production processes and supply chain management ensure on-time delivery, every time.\n\nCompetitive Pricing: We offer excellent value without compromising on quality, helping you maximize your investment.\n\nTechnical Support: Our experienced team provides ongoing technical assistance and consultation throughout your project.\n\nProven Track Record: Years of successful partnerships with businesses across Rivers State and Nigeria demonstrate our commitment to excellence.",
+      "imagePrompt": "Nigerian manufacturing excellence showcase, quality certifications and awards display, satisfied business clients shaking hands, industrial facility with quality control stations, finished products ready for delivery, professional presentation, Port Harcourt business district backdrop, photorealistic",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your manufacturing needs? Edu'uess Enterprise is here to provide the quality solutions your business deserves.\n\nVisit Our Office:\n120 Uniport Road, opposite Lapo Macrofinance Bank\nChoba, Port Harcourt\nObio Akpor, Rivers State\nNigeria\n\nCall Us:\n08036600870\n\nBusiness Hours:\nMonday - Friday: 8:00 AM - 5:00 PM\nSaturday: 9:00 AM - 2:00 PM\n\nWhether you need a quote, technical consultation, or want to learn more about our manufacturing capabilities, our team is ready to assist you. Contact us today and experience the Edu'uess Enterprise difference.",
+      "imagePrompt": "Professional Nigerian business office reception area, welcoming customer service desk, Port Harcourt business environment, modern office interior with Nigerian aesthetic, contact information display, professional staff greeting clients, warm lighting, photorealistic business photography",
+      "layout": "split"
+    }
+  ],
+  "contact": {
+    "phone": "+2348036600870",
+    "email": "info@eduuess.com.ng",
+    "address": "120 Uniport Road, opposite Lapo Macrofinance Bank, Choba, Port Harcourt, Obio Akpor, Rivers State, Nigeria",
+    "whatsapp": "https://wa.me/2348036600870"
+  }
+}
