@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu'uess Enterprise - Quality Manufacturing Solutions for Nigerian Industries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0c0600;
+            --accent-color: #ff7718;
+            --bg-color: #FAF0E8;
+            --text-color: #180A00;
+            --surface-color: #301900;
+            --secondary-accent: #789eae;
+            --font-display: 'Russo One', sans-serif;
+            --font-body: 'Source Sans 3', sans-serif;
+            --border-radius: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(12, 6, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 4px 4px 0 rgba(255, 119, 24, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--bg-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--bg-color);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--primary-color);
+            box-shadow: -4px 4px 0 rgba(255, 119, 24, 0.3);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--bg-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--bg-color);
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-blueprint {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            z-index: 3;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 10h100M0 20h100M0 30h100M0 40h100M0 50h100M0 60h100M0 70h100M0 80h100M0 90h100M10 0v100M20 0v100M30 0v100M40 0v100M50 0v100M60 0v100M70 0v100M80 0v100M90 0v100' stroke='%23ff7718' stroke-width='0.5'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            text-shadow: 4px 4px 0 rgba(12, 6, 0, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        section:nth-child(2) { animation-delay: 0.1s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.3s; }
+        section:nth-child(5) { animation-delay: 0.4s; }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--surface-color);
+            color: var(--bg-color);
+        }
+
+        #about .section-title {
+            color: var(--accent-color);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--accent-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--bg-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--surface-color);
+            color: var(--bg-color);
+            padding: 2rem;
+            box-shadow: 6px 6px 0 var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 var(--accent-color);
+        }
+
+        .service-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            line-height: 1.7;
+        }
+
+        /* Why Choose Us Section */
+        #why-choose-us {
+            background: var(--secondary-accent);
+            color: var(--primary-color);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            box-shadow: 6px 6px 0 var(--primary-color);
+        }
+
+        .why-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .why-card p {
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--primary-color);
+            color: var(--bg-color);
+        }
+
+        #contact .section-title {
+            color: var(--accent-color);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--bg-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--accent-color);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--surface-color);
+            color: var(--bg-color);
+            text-align: center;
+            padding: 2rem;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image,
+            .contact-image {
+                height: 300px;
+            }
+
+            .services-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">EDU'UESS</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-choose-us">Why Choose Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/30762654/pexels-photo-30762654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing Facility" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-blueprint"></div>
+        <div class="hero-content">
+            <h1>Edu'uess Enterprise</h1>
+            <p>Edu'uess Enterprise: Your Trusted Manufacturing Partner in Port Harcourt. Delivering quality industrial solutions with precision and reliability. Serving businesses across Rivers State and beyond.</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Our Team" class="about-image">
+                <div class="about-text">
+                    <p>Edu'uess Enterprise is a leading manufacturing company based in Port Harcourt, Rivers State. Located at 120 Uniport Road, opposite Lapo Macrofinance Bank in Choba, we are strategically positioned to serve clients across Obio Akpor and the entire South-South region.</p>
+                    <p>With our commitment to excellence and quality, we provide reliable manufacturing solutions that meet international standards while understanding the unique needs of Nigerian businesses. Our state-of-the-art facility and experienced team ensure every project is executed with precision and professionalism.</p>
+                    <p>We pride ourselves on building long-term partnerships with our clients, delivering consistent quality, timely production, and exceptional customer service that drives your business forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Manufacturing</h3>
+                    <p>Tailored production solutions to match your specific requirements and specifications</p>
+                </div>
+                <div class="service-card">
+                    <h3>Industrial Supply</h3>
+                    <p>Quality raw materials and industrial components for various sectors</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing and inspection protocols ensuring every product meets the highest standards</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technical Consultation</h3>
+                    <p>Expert guidance on manufacturing processes, optimization, and efficiency improvements</p>
+                </div>
+                <div class="service-card">
+                    <h3>Supply Chain Solutions</h3>
+                    <p>Reliable sourcing and logistics support for seamless operations</p>
+                </div>
+                <div class="service-card">
+                    <h3>Maintenance Services</h3>
+                    <p>Ongoing support and maintenance to keep your operations running smoothly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Edu'uess Enterprise</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Quality Guarantee</h3>
+                    <p>We maintain strict quality control standards on every project, ensuring you receive products that meet or exceed expectations.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Local Expertise</h3>
+                    <p>As a Port Harcourt-based company, we understand the Nigerian market, regulatory environment, and the specific challenges local businesses face.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Reliable Delivery</h3>
+                    <p>Our efficient production processes and supply chain management ensure on-time delivery, every time.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer excellent value without compromising on quality, helping you maximize your investment.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Technical Support</h3>
+                    <p>Our experienced team provides ongoing technical assistance and consultation throughout your project.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Proven Track Record</h3>
+                    <p>Years of successful partnerships with businesses across Rivers State and Nigeria demonstrate our commitment to excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to discuss your manufacturing needs?</h3>
+                    <p>Edu'uess Enterprise is here to provide the quality solutions your business deserves.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Visit Our Office:</strong>
+                            <p>120 Uniport Road, opposite Lapo Macrofinance Bank<br>
+                            Choba, Port Harcourt<br>
+                            Obio Akpor, Rivers State<br>
+                            Nigeria</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Call Us:</strong>
+                            <p><a href="tel:+2348036600870">08036600870</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <p><a href="mailto:info@eduuess.com.ng">info@eduuess.com.ng</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Business Hours:</strong>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                            Saturday: 9:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <p>Whether you need a quote, technical consultation, or want to learn more about our manufacturing capabilities, our team is ready to assist you. Contact us today and experience the Edu'uess Enterprise difference.</p>
+                </div>
+                <img src="https://images.pexels.com/photos/19893586/pexels-photo-19893586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Contact Us" class="contact-image">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Edu'uess Enterprise. Quality Manufacturing Solutions for Nigerian Industries.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2348036600870" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.27 1.412 1.43-5.317-0.325-0.527c-1.342-2.201-2.058-4.719-2.058-7.339 0-7.753 6.313-14.067 14.067-14.067s14.067 6.313 14.067 14.067-6.313 14.067-14.067 14.067zM21.933 18.507c-0.348-0.174-2.060-1.016-2.381-1.132-0.321-0.116-0.554-0.174-0.788 0.174s-0.905 1.132-1.109 1.365c-0.204 0.232-0.409 0.261-0.757 0.087s-1.478-0.544-2.815-1.737c-1.040-0.928-1.742-2.074-1.946-2.421s-0.022-0.536 0.152-0.709c0.156-0.156 0.348-0.409 0.522-0.613s0.232-0.348 0.348-0.581c0.116-0.232 0.058-0.436-0.029-0.613s-0.788-1.898-1.080-2.601c-0.283-0.685-0.571-0.592-0.788-0.603-0.204-0.010-0.437-0.012-0.67-0.012s-0.613 0.087-0.934 0.436c-0.321 0.348-1.225 1.197-1.225 2.918s1.254 3.386 1.428 3.618c0.174 0.232 2.445 3.732 5.922 5.234 0.827 0.357 1.473 0.571 1.977 0.731 0.831 0.264 1.586 0.227 2.183 0.138 0.666-0.099 2.060-0.842 2.351-1.656s0.291-1.512 0.204-1.656c-0.087-0.145-0.321-0.232-0.67-0.407z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
