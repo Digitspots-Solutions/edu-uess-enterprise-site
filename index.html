@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu'uess Enterprise - Quality Manufacturing Solutions for Nigerian Industries</title>
+    <title>Semadyme Classic Trade Finance Co - Your Trusted Partner in Trade Finance and Corporate Banking Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0c0600;
-            --accent-color: #ff7718;
-            --bg-color: #FAF0E8;
-            --text-color: #180A00;
-            --surface-color: #301900;
-            --secondary-accent: #789eae;
-            --font-display: 'Russo One', sans-serif;
-            --font-body: 'Source Sans 3', sans-serif;
-            --border-radius: 0px;
+            --color-primary: #140f07;
+            --color-accent: #b1773f;
+            --color-bg: #F6F2EC;
+            --color-text: #181008;
+            --color-surface: #2e2013;
+            --color-secondary-accent: #889597;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Karla', sans-serif;
+            --border-radius: 4px;
         }
 
         * {
@@ -32,15 +32,9 @@
 
         body {
             font-family: var(--font-body);
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-display);
-            line-height: 1.2;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
             font-weight: 400;
         }
 
@@ -57,21 +51,20 @@
 
         /* Navigation */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(12, 6, 0, 0.95);
+            background: rgba(246, 242, 236, 0.95);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 4px 4px 0 rgba(255, 119, 24, 0.3);
+            border-bottom: 1px solid rgba(177, 119, 63, 0.15);
+            animation: fadeUp 0.6s ease forwards;
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -80,31 +73,32 @@
         .logo {
             font-family: var(--font-display);
             font-size: 1.5rem;
-            color: var(--accent-color);
+            font-weight: 700;
+            color: var(--color-primary);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
-            color: var(--bg-color);
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
+            color: var(--color-text);
+            font-weight: 500;
             font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            letter-spacing: 0.3px;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--color-accent);
         }
 
+        /* Mobile Menu Button */
         .mobile-menu-btn {
             display: none;
             flex-direction: column;
@@ -116,7 +110,7 @@
         .mobile-menu-btn span {
             width: 25px;
             height: 3px;
-            background: var(--bg-color);
+            background: var(--color-text);
             transition: all 0.3s ease;
             transform-origin: center;
         }
@@ -133,14 +127,15 @@
             transform: rotate(-45deg) translate(6px, -6px);
         }
 
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 70px;
             right: -100%;
             width: 300px;
             height: calc(100vh - 70px);
-            background: var(--primary-color);
-            box-shadow: -4px 4px 0 rgba(255, 119, 24, 0.3);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
             transition: right 0.3s ease;
             z-index: 999;
             padding: 2rem;
@@ -160,18 +155,16 @@
 
         .mobile-menu ul a {
             text-decoration: none;
-            color: var(--bg-color);
+            color: var(--color-text);
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 500;
             transition: color 0.3s ease;
             display: block;
             padding: 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .mobile-menu ul a:hover {
-            color: var(--accent-color);
+            color: var(--color-accent);
         }
 
         /* Hero Section */
@@ -182,7 +175,6 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: var(--bg-color);
             overflow: hidden;
             animation: fadeUp 0.6s ease forwards;
         }
@@ -207,104 +199,80 @@
             z-index: 2;
         }
 
-        .hero-blueprint {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.08;
-            z-index: 3;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M0 10h100M0 20h100M0 30h100M0 40h100M0 50h100M0 60h100M0 70h100M0 80h100M0 90h100M10 0v100M20 0v100M30 0v100M40 0v100M50 0v100M60 0v100M70 0v100M80 0v100M90 0v100' stroke='%23ff7718' stroke-width='0.5'/%3E%3C/svg%3E");
-            background-size: 100px 100px;
-        }
-
         .hero-content {
             position: relative;
-            z-index: 4;
+            z-index: 3;
+            color: #ffffff;
             max-width: 900px;
             padding: 0 2rem;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 1.5rem;
-            color: var(--accent-color);
-            text-shadow: 4px 4px 0 rgba(12, 6, 0, 0.8);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            font-family: var(--font-display);
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
             font-weight: 300;
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--accent-color);
-            color: var(--primary-color);
-            padding: 1rem 3rem;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 1.05rem;
             transition: all 0.3s ease;
-            box-shadow: 4px 4px 0 var(--primary-color);
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--color-accent);
+            letter-spacing: 0.5px;
         }
 
         .cta-button:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--primary-color);
+            background: transparent;
+            color: var(--color-accent);
         }
 
         /* Section Styles */
         section {
             padding: 80px 2rem;
-            animation: fadeUp 0.6s ease forwards;
-        }
-
-        section:nth-child(2) { animation-delay: 0.1s; }
-        section:nth-child(3) { animation-delay: 0.2s; }
-        section:nth-child(4) { animation-delay: 0.3s; }
-        section:nth-child(5) { animation-delay: 0.4s; }
-
-        .container {
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--accent-color);
+        section h2 {
+            font-family: var(--font-display);
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         /* About Section */
         #about {
-            background: var(--surface-color);
-            color: var(--bg-color);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
         }
 
-        #about .section-title {
-            color: var(--accent-color);
-        }
-
-        .about-content {
+        .about-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
@@ -315,138 +283,142 @@
             width: 100%;
             height: 500px;
             object-fit: cover;
-            box-shadow: 8px 8px 0 var(--accent-color);
+            border-radius: var(--border-radius);
         }
 
-        .about-text p {
+        .about-content h2 {
             margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
             line-height: 1.8;
         }
 
         /* Services Section */
         #services {
-            background: var(--bg-color);
+            background: rgba(177, 119, 63, 0.03);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #services h2 {
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .service-card {
-            background: var(--surface-color);
-            color: var(--bg-color);
-            padding: 2rem;
-            box-shadow: 6px 6px 0 var(--accent-color);
+            background: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            border-top: 3px solid var(--color-accent);
         }
 
         .service-card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0 var(--accent-color);
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(177, 119, 63, 0.15);
         }
 
         .service-card h3 {
-            color: var(--accent-color);
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-primary);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .service-card p {
-            line-height: 1.7;
-        }
-
-        /* Why Choose Us Section */
-        #why-choose-us {
-            background: var(--secondary-accent);
-            color: var(--primary-color);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .why-card {
-            background: var(--bg-color);
-            padding: 2rem;
-            box-shadow: 6px 6px 0 var(--primary-color);
-        }
-
-        .why-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .why-card p {
+            font-size: 1rem;
             line-height: 1.7;
         }
 
         /* Contact Section */
         #contact {
-            background: var(--primary-color);
-            color: var(--bg-color);
+            text-align: center;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
         }
 
-        #contact .section-title {
-            color: var(--accent-color);
+        #contact h2 {
+            margin-bottom: 1.5rem;
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            max-width: 800px;
+            margin: 0 auto 3rem;
         }
 
-        .contact-info h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .contact-info p {
-            margin-bottom: 1.5rem;
+        .contact-content p {
             font-size: 1.1rem;
+            margin-bottom: 2rem;
             line-height: 1.8;
         }
 
         .contact-details {
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             margin-top: 2rem;
+            text-align: left;
         }
 
-        .contact-item {
+        .contact-details h3 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--color-primary);
             margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
-        .contact-item strong {
-            color: var(--accent-color);
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+        .contact-details p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
 
-        .contact-item a {
-            color: var(--bg-color);
+        .contact-details strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--color-accent);
+            color: #ffffff;
             text-decoration: none;
-            transition: color 0.3s ease;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .contact-item a:hover {
-            color: var(--accent-color);
+        .contact-link:hover {
+            background: var(--color-primary);
         }
 
-        .contact-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            box-shadow: 8px 8px 0 var(--accent-color);
+        .whatsapp-link {
+            background: #25D366;
+        }
+
+        .whatsapp-link:hover {
+            background: #1da851;
         }
 
         /* WhatsApp Floating Button */
@@ -461,37 +433,49 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
             z-index: 999;
-            text-decoration: none;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
-            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
         }
 
         .whatsapp-float svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
+            width: 32px;
+            height: 32px;
+            fill: #ffffff;
         }
 
         /* Footer */
         footer {
-            background: var(--surface-color);
-            color: var(--bg-color);
+            background: var(--color-surface);
+            color: #ffffff;
             text-align: center;
             padding: 2rem;
-            border-top: 4px solid var(--accent-color);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.4s;
         }
 
         footer p {
             font-size: 0.95rem;
+            opacity: 0.9;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .about-container {
+                gap: 3rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -501,77 +485,92 @@
                 display: flex;
             }
 
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-
             section {
                 padding: 48px 1.5rem;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .hero-content h1 {
+                font-size: 2.2rem;
             }
 
-            .about-content,
-            .contact-content {
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+            }
+
+            .about-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
 
-            .about-image,
-            .contact-image {
-                height: 300px;
+            .about-image {
+                height: 350px;
             }
 
-            .services-grid,
-            .why-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
 
+            .contact-details {
+                padding: 2rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                width: 100%;
+                text-align: center;
+            }
+
             .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
                 width: 50px;
                 height: 50px;
+                bottom: 20px;
+                right: 20px;
             }
 
             .whatsapp-float svg {
-                width: 28px;
-                height: 28px;
+                width: 26px;
+                height: 26px;
             }
         }
 
         @media (max-width: 480px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
             .hero-content h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
             }
 
-            .cta-button {
-                padding: 0.8rem 2rem;
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 1.7rem;
+            section h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">EDU'UESS</a>
+            <a href="#hero" class="logo">Semadyme Classic</a>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#why-choose-us">Why Choose Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -580,156 +579,109 @@
                 <span></span>
             </div>
         </div>
-        <div class="mobile-menu">
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#why-choose-us">Why Choose Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
     </nav>
 
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
     <section id="hero">
-        <img src="https://images.pexels.com/photos/30762654/pexels-photo-30762654.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing Facility" class="hero-bg">
+        <img src="https://images.pexels.com/photos/12729067/pexels-photo-12729067.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Semadyme Classic Trade Finance Co" class="hero-bg">
         <div class="hero-overlay"></div>
-        <div class="hero-blueprint"></div>
         <div class="hero-content">
-            <h1>Edu'uess Enterprise</h1>
-            <p>Edu'uess Enterprise: Your Trusted Manufacturing Partner in Port Harcourt. Delivering quality industrial solutions with precision and reliability. Serving businesses across Rivers State and beyond.</p>
-            <a href="#contact" class="cta-button">Get In Touch</a>
+            <h1>Welcome to Semadyme Classic Trade Finance Co</h1>
+            <p class="tagline">Your Trusted Partner in Trade Finance and Corporate Banking Solutions</p>
+            <p>Empowering Nigerian Businesses with Strategic Financial Solutions</p>
+            <p>As a leading trade finance and corporate banking institution in Port Harcourt, we provide comprehensive financial services tailored to your business growth. Our expert team delivers reliable, secure, and innovative financial solutions that drive sustainable business expansion across Nigeria.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
 
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Us</h2>
+        <div class="about-container">
+            <img src="https://images.pexels.com/photos/34769111/pexels-photo-34769111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="About Semadyme Classic" class="about-image">
             <div class="about-content">
-                <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Our Team" class="about-image">
-                <div class="about-text">
-                    <p>Edu'uess Enterprise is a leading manufacturing company based in Port Harcourt, Rivers State. Located at 120 Uniport Road, opposite Lapo Macrofinance Bank in Choba, we are strategically positioned to serve clients across Obio Akpor and the entire South-South region.</p>
-                    <p>With our commitment to excellence and quality, we provide reliable manufacturing solutions that meet international standards while understanding the unique needs of Nigerian businesses. Our state-of-the-art facility and experienced team ensure every project is executed with precision and professionalism.</p>
-                    <p>We pride ourselves on building long-term partnerships with our clients, delivering consistent quality, timely production, and exceptional customer service that drives your business forward.</p>
-                </div>
+                <h2>About Semadyme Classic Trade Finance Co</h2>
+                <p>Semadyme Classic Trade Finance Co (also operating as Semadyme Classic Corporate Banking Limited) is a premier financial services institution strategically located in the heart of Port Harcourt's commercial district. We specialize in trade finance, corporate banking, and investment advisory services designed specifically for Nigerian businesses.</p>
+                <p>With rigorous risk management protocols led by experienced financial professionals, we ensure every transaction meets the highest standards of security and compliance. Our location at 120 Uniport Road, Obio Akpor, positions us to serve businesses across Rivers State and beyond.</p>
+                <p>Our mission is to bridge the financing gap for small, medium, and large enterprises through accessible, transparent, and professionally managed financial products. We understand the unique challenges of the Nigerian business landscape and provide customized solutions that align with your strategic objectives.</p>
             </div>
         </div>
     </section>
 
     <section id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Custom Manufacturing</h3>
-                    <p>Tailored production solutions to match your specific requirements and specifications</p>
-                </div>
-                <div class="service-card">
-                    <h3>Industrial Supply</h3>
-                    <p>Quality raw materials and industrial components for various sectors</p>
-                </div>
-                <div class="service-card">
-                    <h3>Quality Assurance</h3>
-                    <p>Rigorous testing and inspection protocols ensuring every product meets the highest standards</p>
-                </div>
-                <div class="service-card">
-                    <h3>Technical Consultation</h3>
-                    <p>Expert guidance on manufacturing processes, optimization, and efficiency improvements</p>
-                </div>
-                <div class="service-card">
-                    <h3>Supply Chain Solutions</h3>
-                    <p>Reliable sourcing and logistics support for seamless operations</p>
-                </div>
-                <div class="service-card">
-                    <h3>Maintenance Services</h3>
-                    <p>Ongoing support and maintenance to keep your operations running smoothly</p>
-                </div>
+        <h2>Comprehensive Financial Solutions</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Trade Finance</h3>
+                <p>We facilitate international and domestic trade transactions with letters of credit, trade credit insurance, invoice financing, and supply chain finance solutions. Our trade finance products ensure smooth cash flow for importers and exporters across various sectors.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="why-choose-us">
-        <div class="container">
-            <h2 class="section-title">Why Choose Edu'uess Enterprise</h2>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Quality Guarantee</h3>
-                    <p>We maintain strict quality control standards on every project, ensuring you receive products that meet or exceed expectations.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Local Expertise</h3>
-                    <p>As a Port Harcourt-based company, we understand the Nigerian market, regulatory environment, and the specific challenges local businesses face.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Reliable Delivery</h3>
-                    <p>Our efficient production processes and supply chain management ensure on-time delivery, every time.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Competitive Pricing</h3>
-                    <p>We offer excellent value without compromising on quality, helping you maximize your investment.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Technical Support</h3>
-                    <p>Our experienced team provides ongoing technical assistance and consultation throughout your project.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Proven Track Record</h3>
-                    <p>Years of successful partnerships with businesses across Rivers State and Nigeria demonstrate our commitment to excellence.</p>
-                </div>
+            <div class="service-card">
+                <h3>Corporate Banking</h3>
+                <p>Tailored banking solutions for businesses including business accounts, cash management services, corporate loans, overdraft facilities, and working capital financing. We support your operational efficiency with dedicated relationship managers.</p>
+            </div>
+            <div class="service-card">
+                <h3>Investment Advisory</h3>
+                <p>Strategic investment guidance for portfolio diversification, treasury management, and wealth preservation. Our expert advisors help you make informed decisions aligned with your long-term financial goals.</p>
+            </div>
+            <div class="service-card">
+                <h3>Risk Management</h3>
+                <p>Comprehensive risk assessment and mitigation strategies led by certified risk officers. We protect your business interests through thorough due diligence, credit analysis, and ongoing risk monitoring.</p>
+            </div>
+            <div class="service-card">
+                <h3>Foreign Exchange Services</h3>
+                <p>Competitive forex rates and currency hedging solutions for businesses engaged in international trade. We provide timely execution and transparent pricing for all currency transactions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Asset Finance</h3>
+                <p>Equipment leasing, asset-backed lending, and project finance solutions that enable business expansion without depleting working capital. Flexible repayment terms designed for Nigerian business cycles.</p>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Ready to discuss your manufacturing needs?</h3>
-                    <p>Edu'uess Enterprise is here to provide the quality solutions your business deserves.</p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Visit Our Office:</strong>
-                            <p>120 Uniport Road, opposite Lapo Macrofinance Bank<br>
-                            Choba, Port Harcourt<br>
-                            Obio Akpor, Rivers State<br>
-                            Nigeria</p>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <strong>Call Us:</strong>
-                            <p><a href="tel:+2348036600870">08036600870</a></p>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <strong>Email:</strong>
-                            <p><a href="mailto:info@eduuess.com.ng">info@eduuess.com.ng</a></p>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <strong>Business Hours:</strong>
-                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
-                            Saturday: 9:00 AM - 2:00 PM</p>
-                        </div>
-                    </div>
-                    
-                    <p>Whether you need a quote, technical consultation, or want to learn more about our manufacturing capabilities, our team is ready to assist you. Contact us today and experience the Edu'uess Enterprise difference.</p>
-                </div>
-                <img src="https://images.pexels.com/photos/19893586/pexels-photo-19893586.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Contact Us" class="contact-image">
+        <h2>Get in Touch with Semadyme Classic Trade Finance Co</h2>
+        <div class="contact-content">
+            <p>Ready to discuss your business financing needs? Our team is available to provide expert guidance and customized financial solutions.</p>
+        </div>
+        <div class="contact-details">
+            <h3>Visit Our Office:</h3>
+            <p><strong>Address:</strong> 120 Uniport Road, opposite Lapo Macrofinance Bank<br>
+            Choba, Port Harcourt<br>
+            Obio Akpor, Rivers State, Nigeria</p>
+            
+            <h3>Contact Information:</h3>
+            <p><strong>Phone:</strong> +234 803 660 0870</p>
+            <p><strong>Email:</strong> info@semadymeclassic.com</p>
+            
+            <h3>Business Hours:</h3>
+            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+            Saturday: 9:00 AM - 2:00 PM<br>
+            Sunday: Closed</p>
+            
+            <p>For immediate assistance, reach us via WhatsApp for quick responses to your inquiries. Our relationship managers are committed to providing timely, professional service that meets your business scheduling needs.</p>
+            <p>Schedule a consultation today to explore how Semadyme Classic can support your business growth objectives.</p>
+            
+            <div class="contact-links">
+                <a href="tel:+2348036600870" class="contact-link">Call Us</a>
+                <a href="mailto:info@semadymeclassic.com" class="contact-link">Send Email</a>
+                <a href="https://wa.me/2348036600870" class="contact-link whatsapp-link" target="_blank">WhatsApp Us</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Edu'uess Enterprise. Quality Manufacturing Solutions for Nigerian Industries.</p>
-        </div>
+        <p>&copy; 2024 Semadyme Classic Trade Finance Co. All rights reserved.</p>
     </footer>
 
-    <a href="https://wa.me/2348036600870" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.27 1.412 1.43-5.317-0.325-0.527c-1.342-2.201-2.058-4.719-2.058-7.339 0-7.753 6.313-14.067 14.067-14.067s14.067 6.313 14.067 14.067-6.313 14.067-14.067 14.067zM21.933 18.507c-0.348-0.174-2.060-1.016-2.381-1.132-0.321-0.116-0.554-0.174-0.788 0.174s-0.905 1.132-1.109 1.365c-0.204 0.232-0.409 0.261-0.757 0.087s-1.478-0.544-2.815-1.737c-1.040-0.928-1.742-2.074-1.946-2.421s-0.022-0.536 0.152-0.709c0.156-0.156 0.348-0.409 0.522-0.613s0.232-0.348 0.348-0.581c0.116-0.232 0.058-0.436-0.029-0.613s-0.788-1.898-1.080-2.601c-0.283-0.685-0.571-0.592-0.788-0.603-0.204-0.010-0.437-0.012-0.67-0.012s-0.613 0.087-0.934 0.436c-0.321 0.348-1.225 1.197-1.225 2.918s1.254 3.386 1.428 3.618c0.174 0.232 2.445 3.732 5.922 5.234 0.827 0.357 1.473 0.571 1.977 0.731 0.831 0.264 1.586 0.227 2.183 0.138 0.666-0.099 2.060-0.842 2.351-1.656s0.291-1.512 0.204-1.656c-0.087-0.145-0.321-0.232-0.67-0.407z"/>
+    <a href="https://wa.me/2348036600870" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.188-2.113c2.343 1.225 4.975 1.863 7.813 1.863 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.25c-2.488 0-4.913-0.675-7.05-1.95l-0.488-0.3-5.163 1.338 1.4-5.213-0.325-0.512c-1.412-2.238-2.162-4.825-2.162-7.488 0-7.65 6.225-13.875 13.875-13.875s13.875 6.225 13.875 13.875-6.225 13.875-13.875 13.875zM22.713 19.288c-0.4-0.2-2.363-1.163-2.738-1.3-0.363-0.138-0.625-0.2-0.888 0.2s-1.025 1.3-1.25 1.563c-0.225 0.262-0.45 0.3-0.85 0.1s-1.663-0.613-3.163-1.95c-1.175-1.037-1.963-2.325-2.188-2.725s-0.025-0.613 0.175-0.813c0.188-0.187 0.4-0.487 0.6-0.737 0.2-0.237 0.275-0.412 0.413-0.675 0.137-0.262 0.062-0.487-0.025-0.687s-0.888-2.137-1.213-2.925c-0.325-0.775-0.65-0.663-0.888-0.675-0.225-0.012-0.488-0.012-0.75-0.012s-0.688 0.1-1.05 0.5-1.375 1.338-1.375 3.263 1.413 3.787 1.613 4.050c0.2 0.262 2.8 4.275 6.788 5.988 0.95 0.412 1.688 0.65 2.263 0.838 0.95 0.3 1.813 0.262 2.5 0.162 0.763-0.112 2.363-0.963 2.7-1.9 0.338-0.938 0.338-1.738 0.238-1.9-0.1-0.175-0.363-0.275-0.763-0.475z"/>
         </svg>
     </a>
 
@@ -754,6 +706,5 @@
             });
         }
     </script>
-
 </body>
 </html>
